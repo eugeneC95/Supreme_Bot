@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <script>
+      chrome.browserAction.onClicked.addListener(function(activeTab)
+      {
+        var newURL = "http://stackoverflow.com/";
+        chrome.tabs.create({ url: newURL });
+      });
+    </script>
+  </head>
+</html>
