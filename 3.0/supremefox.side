@@ -1,0 +1,35 @@
+{
+  "id": "fda0a914-2cab-479d-958f-281dc82be67d",
+  "version": "1.1",
+  "name": "supremefox",
+  "url": "",
+  "tests": [{
+    "id": "42282ab2-7e89-4d8c-91cd-b8a698abca42",
+    "name": "bot",
+    "commands": [{
+      "id": "662c4bff-5a92-4ddb-b881-b56e8444c98f",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.supremenewyork.com/shop/all/accessories",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "896ad3c4-1436-42cf-9ab9-620aeaa54863",
+      "comment": "",
+      "command": "assert",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cd72c4e4-a161-4661-a0d7-4dec02264097",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["42282ab2-7e89-4d8c-91cd-b8a698abca42"]
+  }],
+  "urls": [],
+  "plugins": []
+}

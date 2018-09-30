@@ -1,0 +1,79 @@
+1538134935168	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\EUGENE\\AppData\\Local\\Temp\\rust_mozprofile.lGhtxnOhTmLr"
+1538134936263	Marionette	INFO	Listening on port 49951
+1538134936290	Marionette	WARN	TLS certificate errors will be ignored for this session
+1538134936311	Marionette	DEBUG	[6442450945] Frame script loaded
+1538134936315	Marionette	DEBUG	[6442450945] Frame script registered
+1538134936336	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1538134936581	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1538134948250	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/all/accessories
+1538134952138	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.supremenewyork.com/shop/all/accessories
+1538134952276	Marionette	DEBUG	[6442450949] Frame script loaded
+1538134952280	Marionette	DEBUG	[6442450949] Frame script registered
+1538134952290	Marionette	DEBUG	[6442450952] Frame script loaded
+1538134952293	Marionette	DEBUG	[6442450952] Frame script registered
+1538134952301	Marionette	DEBUG	[6442450949] Received DOM event beforeunload for about:blank
+1538134952376	Marionette	DEBUG	[6442450949] Received DOM event pagehide for about:blank
+1538134952376	Marionette	DEBUG	[6442450949] Received DOM event unload for about:blank
+1538134952656	Marionette	DEBUG	[6442450949] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+1538134953025	Marionette	DEBUG	[6442450949] Received DOM event pageshow for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+[Child 13292, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13292, Chrome_Ch[Parent 13008, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11652, Chrome_ChildThread] WARNING: pipe error: 232: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
+[Child 
+###!!! [Child][RunMessage] Error: Channel error: cannot send/recv
+
+11652, Chrome_ChildThread] WARNING: pipe error[Child 1212, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 1212, Chrome_ChildThread] WARNING: pipe error: 1091538134998496	Marionette	INFO	Stopped listening on port 49951
+[GPU 7744, Chrome_Ch
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1538135005955	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\EUGENE\\AppData\\Local\\Temp\\rust_mozprofile.a8VTh07tFrlV"
+1538135007023	Marionette	INFO	Listening on port 50135
+1538135007073	Marionette	WARN	TLS certificate errors will be ignored for this session
+1538135007093	Marionette	DEBUG	[6442450945] Frame script loaded
+1538135007095	Marionette	DEBUG	[6442450945] Frame script registered
+1538135007109	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1538135007698	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1538135028345	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/all/accessories
+1538135033871	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.supremenewyork.com/shop/all/accessories
+1538135034012	Marionette	DEBUG	[6442450949] Frame script loaded
+1538135034017	Marionette	DEBUG	[6442450949] Frame script registered
+1538135034029	Marionette	DEBUG	[6442450952] Frame script loaded
+1538135034030	Marionette	DEBUG	[6442450952] Frame script registered
+1538135034037	Marionette	DEBUG	[6442450949] Received DOM event beforeunload for about:blank
+1538135034115	Marionette	DEBUG	[6442450949] Received DOM event pagehide for about:blank
+1538135034115	Marionette	DEBUG	[6442450949] Received DOM event unload for about:blank
+1538135034439	Marionette	DEBUG	[6442450949] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+1538135034775	Marionette	DEBUG	[6442450949] Received DOM event pageshow for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+[Parent 10736, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6944, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6944, Chr[Child 11924, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11924, Chrome_ChildThread] WARNIN[Child 3432, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 3432, Chrome_Ch1538135102556	Marionette	INFO	Stopped listening on port 50135
+[GPU 1484, Chrome_Chil
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1538135107161	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\EUGENE\\AppData\\Local\\Temp\\rust_mozprofile.KsUAc3C4WqNx"
+1538135108232	Marionette	INFO	Listening on port 50365
+1538135108278	Marionette	WARN	TLS certificate errors will be ignored for this session
+1538135108299	Marionette	DEBUG	[6442450945] Frame script loaded
+1538135108300	Marionette	DEBUG	[6442450945] Frame script registered
+1538135108314	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1538135109295	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1538135132828	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/all/accessories
+1538135142536	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.supremenewyork.com/shop/all/accessories
+1538135142679	Marionette	DEBUG	[6442450949] Frame script loaded
+1538135142680	Marionette	DEBUG	[6442450949] Frame script registered
+1538135142687	Marionette	DEBUG	[6442450952] Frame script loaded
+1538135142691	Marionette	DEBUG	[6442450952] Frame script registered
+1538135142700	Marionette	DEBUG	[6442450949] Received DOM event beforeunload for about:blank
+1538135142778	Marionette	DEBUG	[6442450949] Received DOM event pagehide for about:blank
+1538135142778	Marionette	DEBUG	[6442450949] Received DOM event unload for about:blank
+1538135143121	Marionette	DEBUG	[6442450949] Received DOM event DOMContentLoaded for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+1538135143406	Marionette	DEBUG	[6442450949] Received DOM event pageshow for https://www.supremenewyork.com/shop/accessories/pl5vh0cbs/x1oh8er62
+[Child 4292, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4292, Chrome_Ch[Child 1352, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 1352, Chrome_ChildThread] WARNIN[Child 8344, 1538135151253	Marionette	INFO	Stopped listening on port 50365
+[GPU 2324, Chro
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
