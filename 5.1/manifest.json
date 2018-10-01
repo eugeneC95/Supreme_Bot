@@ -3,12 +3,11 @@
 
   "name": "SupremeBot-Eugene_Chan",
   "description": "This is a Supreme bot which created by Eugene_Chan",
-  "version": "1.0",
+  "version": "5.1",
 
   "browser_action": {
      "default_icon": "icon.png",
-     "default_title": "这是一个示例Chrome插件",
-     "default_popup": "popup.html"
+     "default_popup": "index.html"
   },
   "permissions": [
       "tabs",
@@ -16,9 +15,5 @@
       "notifications",
       "storage",
       "<all_urls>"
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  }
-
+  ]
 }
