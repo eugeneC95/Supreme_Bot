@@ -3,4 +3,3 @@ function putcart(){
   console.log("Cart Inserted");
 }
 putcart();
-chrome.tabs.create({ url: "https://www.supremenewyork.com/checkout" });
