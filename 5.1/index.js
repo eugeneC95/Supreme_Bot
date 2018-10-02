@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function reloadtab(i){
     chrome.tabs.update({url:i});
   }
-  function wait(x){
-    for(var i =0;i<x;i++){
+  function wait(){
+    for(var i =0;i<100000000;i++){
     }
   }
   checkPageButton.addEventListener('click', function() {
@@ -14,15 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
          url: "https://www.supremenewyork.com/shop/all"
     });
     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-       wait(80000000);
+       wait();
        if(changeInfo.status == "complete"){
          chrome.tabs.getSelected(null,function(tab) {
            if(tab.url=="https://www.supremenewyork.com/checkout"){
              chrome.tabs.executeScript(null,{file:"fill.js"});
            }else if(tab.title.includes("Supreme:")){
              // chrome.tabs.query({active:true,windowType:"normal", currentWindow: true},function(d){console.debug(d);});
+             wait();
              chrome.tabs.executeScript(null,{file:"putcart.js"});
-             wait(80000000);
+             wait();
              chrome.tabs.executeScript(null,{file:"h_checkout.js"});
              // chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
              //   reloadtab(request);
