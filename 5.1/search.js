@@ -8,13 +8,12 @@ function searching(){
   var articlelist = document.querySelectorAll('div.inner-article>a');
   var imglist = document.querySelectorAll('div.inner-article>a>img');
   forEach(imglist, function (index, value) {
-    console.log(index, value);
+    //console.log(index, value); //show all data that got
     if(value.getAttribute("alt") == "Mnahafdzurs"){
       var link = articlelist[index].href;
-      chrome.tabs.sendMessage(null,articlelist[index].href,function(response) {
-         console.log('Sent:' + response);
+      chrome.runtime.sendMessage(link, function(response) {
+        console.log("url sent");
       });
-      
     };
   });
 };
