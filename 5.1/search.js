@@ -1,10 +1,12 @@
-function searching(){
+chrome.storage.sync.get('i_code', function(obj) {
+  //document.querySelector('#imgcode').value =obj.i_code;
+  var item = obj.i_code;
+  console.log("Searching:" + item);
   var forEach = function (array, callback, scope) {
     for (var i = 0; i < array.length; i++) {
       callback.call(scope, i, array[i]);
     }
   };
-  var target = 0;
   var articlelist = document.querySelectorAll('div.inner-article>a');
   var imglist = document.querySelectorAll('div.inner-article>a>img');
   forEach(imglist, function (index, value) {
@@ -16,7 +18,5 @@ function searching(){
       });
     };
   });
-};
-console.log("Searching" + item);
-searching();
-console.log("Search Complete");
+  console.log("Search Complete");
+});

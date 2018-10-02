@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   checkPageButton.addEventListener('click', function() {
-    chrome.storage.sync.get('i_code', function(obj) {
-      alert('Value is ' + obj.value);
-    });
     chrome.tabs.update({
          url: "https://www.supremenewyork.com/shop/all"
     });
@@ -30,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
              //chrome.tabs.query({active:true,windowType:"normal", currentWindow: true},function(d){console.debug(d);});
              sleep(100);
              chrome.tabs.executeScript(null,{file:"putcart.js"});
-             sleep(600);
+             sleep(700);
              chrome.tabs.executeScript(null,{file:"h_checkout.js"});
            }else if(tab.title == "Supreme"){
              //open search
-             chrome.tabs.executeScript(null,{code:"var item = 'B anymfju0o';"});
+             //chrome.tabs.executeScript(null,{code:"var item = 'B anymfju0o';"});
              chrome.tabs.executeScript(null,{file:"search.js"});
              chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                reloadtab(request);
@@ -44,6 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     });
   });
+
+  //auto input img code from data still failed
+  // if(document.querySelector('#imgcode').value == null){
+  //   chrome.storage.sync.get('i_code', function(obj) {
+  //     document.querySelector('#imgcode').value =obj.i_code;
+  //   });
+  // };
   save.addEventListener('click',function(){
     if(document.querySelector('#imgcode').value != null){
       //text got value and set data to local
@@ -52,16 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Settings saved to:' + value);
       });
     }else{
-      //alert dont have data
-      alert("We need img code to run");
+      alert("We need img code to run");//alert dont have data
     };
   });
-  //auto input img code from data still failed
-  if(document.querySelector('#imgcode').value == null){
-    chrome.storage.sync.get('i_code', function(obj) {
-      document.querySelector('#imgcode').value =obj.i_code;
-    });
-  };
   refresh.addEventListener('click',function(){
     chrome.storage.sync.get('i_code', function(obj) {
       document.querySelector('#imgcode').value =obj.i_code;
