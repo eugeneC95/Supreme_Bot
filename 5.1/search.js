@@ -9,7 +9,7 @@ function searching(){
   var imglist = document.querySelectorAll('div.inner-article>a>img');
   forEach(imglist, function (index, value) {
     //console.log(index, value); //show all data that got
-    if(value.getAttribute("alt") == "Mnahafdzurs"){
+    if(value.getAttribute("alt") == item){
       var link = articlelist[index].href;
       chrome.runtime.sendMessage(link, function(response) {
         console.log("url sent");
@@ -17,6 +17,6 @@ function searching(){
     };
   });
 };
-console.log("Search Starting");
+console.log("Searching" + item);
 searching();
 console.log("Search Complete");
