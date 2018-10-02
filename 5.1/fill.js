@@ -1,7 +1,7 @@
 function fillform(){
   document.querySelector('[id="order_billing_name"]').value = "x x x";
-  document.querySelector('[id="order_email"]').value = "xxx";
-  document.querySelector('[id="order_tel"]').value = "008050453189";
+  document.querySelector('[id="order_email"]').value = "xxx@hotmail.com";
+  document.querySelector('[id="order_tel"]').value = "08050453189";
   document.querySelector('[id="order_billing_zip"]').value = "1620061";
   document.querySelector('[id="order_billing_state"]').value =" 東京都";
   document.querySelector('[id="order_billing_city"]').value = "江戸川区東葛西";
@@ -13,7 +13,6 @@ function fillform(){
   document.querySelector('[id="order_terms"]').click();
 }
 function buy(){
-
   document.querySelector('input[type="submit"][value="購入する"]').click();
 }
 console.log("filling");
