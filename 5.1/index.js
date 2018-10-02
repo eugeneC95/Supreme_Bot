@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.update({url:i});
   }
   function wait(){
-    for(var i =0;i<100000000;i++){
+    for(var i =0;i<300000000;i++){
     }
   }
   checkPageButton.addEventListener('click', function() {
