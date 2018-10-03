@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  var hmpage = document.getElementById('home');
-  var save = document.getElementById('commit');
-  var refresh = document.getElementById('refresh');
+  var start = document.getElementById('start_btn');
+  var hmpage = document.getElementById('home_btn');
+  var save = document.getElementById('save_btn');
+  var refresh = document.getElementById('refresh_btn');
   function reloadtab(i){
     chrome.tabs.update({url:i});
   }
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-  checkPageButton.addEventListener('click', function() {
+  start.addEventListener('click', function() {
     chrome.tabs.update({
          url: "https://www.supremenewyork.com/shop/all"
     });

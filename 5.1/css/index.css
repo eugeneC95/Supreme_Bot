@@ -1,0 +1,20 @@
+#start_btn,#refresh_btn,#save_btn,#home_btn{
+  margin-top: 5px;
+}
+#order_name{
+  padding: 0px;
+  position: relative;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding :5px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
+  cursor: inherit;
+  font: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: 14px;
+}
