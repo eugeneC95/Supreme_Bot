@@ -1,5 +1,14 @@
+#title{
+  font-size: 18px;
+}
 #start_btn,#refresh_btn,#save_btn,#home_btn{
   margin-top: 5px;
+  font-size: 15px;
+  background-color: red;
+  border: 2px solid red;
+  font-weight: bold;
+  color: white;
+  font-size:
 }
 #order_name{
   padding: 0px;
