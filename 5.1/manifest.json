@@ -15,9 +15,5 @@
       "notifications",
       "storage",
       "<all_urls>"
-  ],
-  "background":{
-    "scripts": ["background.js"],
-    "persistent": false
-  }
+  ]
 }

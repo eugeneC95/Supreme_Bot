@@ -1,23 +1,49 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <script src="index.js"></script>
   </head>
   <body>
     <div id="container">
       <div><label id="title">SupremeBot</label></div>
-      <button id="home_btn">Home</button><br>
+      <button id="home_btn">Home</button>
+      <button id="start_btn">Start</button>
       <div id=imgbox>
         <label>Image Code</label>
-        <input type="text" id="imgcode" value="">
+        <input type="text" id="imgcode">
       </div>
+      <button id="form_btn">Show Form</button>
+      <form id="form">
+        <label>Name</label>
+        <input type="text" value="" id="order_name" placeholder="Your Name">
+        <label>Email</label>
+        <input type="text" value="" id="order_email" placeholder="Email">
+        <label>Tel</label>
+        <input type="text" value="" id="order_tel" placeholder="Tel">
+        <label>Zip</label>
+        <input type="text" value="" id="order_zip" placeholder="Zip">
+        <label>State(Add space at start ex: 東京都)</label>
+        <input type="text" value="" id="order_state" placeholder="State">
+        <label>Address1</label>
+        <input type="text" value="" id="order_add1" placeholder="Address1">
+        <label>Address2</label>
+        <input type="text" value="" id="order_add2" placeholder="Address2">
+        <label>CardNo</label>
+        <input type="text" value="" id="order_card" placeholder="CardNo">
+        <label>ExpireMonth</label>
+        <input type="text" value="" id="order_month" placeholder="ExpireMonth">
+        <label>ExpireYear</label>
+        <input type="text" value="" id="order_year" placeholder="ExpireYear">
+        <label>CVV</label>
+        <input type="text" value="" id="order_cvv" placeholder="CVV No">
+      </form>
       <button id="save_btn" >Save</button>
       <button id="refresh_btn">Refresh</button>
-      <form>
-        <input type="text" value="" id="order_name" placeholder="Your Name">
-      </form>
-      <button id="start_btn">Start</button>
+
+
     </div>
   </body>
 </html>

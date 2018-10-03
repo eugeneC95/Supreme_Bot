@@ -1,5 +1,6 @@
 body{
   width: 250px;
+  height: auto;
 }
 #container{
   width: 100%;
@@ -25,12 +26,12 @@ body{
   border: 1px solid black;
   width: 95%;
 }
-#order_name{
+#order_name,#order_email,#order_tel,#order_zip,#order_state,#order_add1,#order_add2,#order_card,#order_month,#order_year,#order_cvv{
   position: relative;
   width: 100%;
   border: 1px solid black;
   border-radius: 3px;
-  padding :5px;
+  padding :4px;
   outline: none;
   background-color: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0.87);
@@ -39,5 +40,5 @@ body{
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   height: 100%;
   box-sizing: border-box;
-  margin-top: 14px;
+  margin-top: 2px;
 }
