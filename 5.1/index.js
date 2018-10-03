@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   var start = document.getElementById('start_btn');
+  var demo = document.getElementById('demo_btn');
   var hmpage = document.getElementById('home_btn');
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
@@ -48,7 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     });
   });
+  demo.addEventListener('click', function() {
+    for($i=0;$i<2;$i++){
+      chrome.tabs.update({
+           url: "https://www.supremenewyork.com/shop/all"
+      });
+      sleep(500);
+      chrome.tabs.getSelected(null,function(tab) {
+        chrome.tabs.executeScript(null,{file:"search.js"});
+        chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
+          if(request == ""){
+            console.log("nothing");
+          }else{
+            alert(request);
+            break;
+          };
+        });
+
+      });
+
+    };
+  });
   //auto input img code from data
 
   autoinput("#imgcode","i_code");
