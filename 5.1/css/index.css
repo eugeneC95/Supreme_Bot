@@ -1,5 +1,14 @@
+body{
+  width: 250px;
+}
+#container{
+  width: 100%;
+}
 #title{
   font-size: 18px;
+}
+#imgbox{
+  margin-top: 10px;
 }
 #start_btn,#refresh_btn,#save_btn,#home_btn{
   margin-top: 5px;
@@ -10,8 +19,13 @@
   color: white;
   font-size:
 }
+#imgcode{
+  padding:5px;
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 95%;
+}
 #order_name{
-  padding: 0px;
   position: relative;
   width: 100%;
   border: 1px solid black;

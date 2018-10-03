@@ -16,7 +16,8 @@
       "storage",
       "<all_urls>"
   ],
-  "externally_connectable": {
-      "matches": ["*://*.supremenewyork.com/*"]
+  "background":{
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }

@@ -2,23 +2,22 @@
 <html>
   <head>
     <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="index.js"></script>
   </head>
   <body>
-    <script src="index.js"></script>
-    <div>
-      <label id="title">SupremeBot</label>
+    <div id="container">
+      <div><label id="title">SupremeBot</label></div>
+      <button id="home_btn">Home</button><br>
+      <div id=imgbox>
+        <label>Image Code</label>
+        <input type="text" id="imgcode" value="">
+      </div>
+      <button id="save_btn" >Save</button>
+      <button id="refresh_btn">Refresh</button>
+      <form>
+        <input type="text" value="" id="order_name" placeholder="Your Name">
+      </form>
+      <button id="start_btn">Start</button>
     </div>
-    <button id="home_btn">Home</button><br>
-    <div>
-      <label>Image Code</label><br>
-      <input type="text" id="imgcode" value=""><br>
-
-    </div>
-    <button id="save_btn" >Save</button>
-    <button id="refresh_btn">Refresh</button>
-    <form>
-      <input type="text" value="" id="order_name" placeholder="Your Name">
-    </form>
-    <button id="start_btn">Start</button>
   </body>
 </html>
