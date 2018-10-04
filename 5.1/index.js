@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
   var start = document.getElementById('start_btn');
-  var demo = document.getElementById('demo_btn');
   var hmpage = document.getElementById('home_btn');
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
   function reloadtab(i){
     chrome.tabs.update({url:i});
+  }
+  function newtab(i){
+    chrome.tabs.create({url:i});
   }
   function autoinput(id,data){
     if(document.querySelector(id).value == ""){
@@ -23,52 +25,58 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
+  // start.addEventListener('click', function() {
+  //   chrome.tabs.update({
+  //        url: "https://www.supremenewyork.com/shop/all"
+  //   });
+  //   chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  //      if(changeInfo.status == "complete"){
+  //        chrome.tabs.getSelected(null,function(tab) {
+  //          if(tab.url=="https://www.supremenewyork.com/checkout"){
+  //            chrome.tabs.executeScript(null,{file:"fill.js"});
+  //          }else if(tab.title.includes("Supreme:")){
+  //            //chrome.tabs.query({active:true,windowType:"normal", currentWindow: true},function(d){console.debug(d);});
+  //            sleep(100);
+  //            chrome.tabs.executeScript(null,{file:"putcart.js"});
+  //            sleep(500);
+  //          }else if(tab.title == "Supreme"){
+  //            //open search
+  //            chrome.tabs.executeScript(null,{file:"search.js"});
+  //            chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  //              reloadtab(request);
+  //            });
+  //          };
+  //        });
+  //     };
+  //   });
+  // });
   start.addEventListener('click', function() {
-    chrome.tabs.update({
-         url: "https://www.supremenewyork.com/shop/all"
-    });
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-       if(changeInfo.status == "complete"){
-         chrome.tabs.getSelected(null,function(tab) {
-           if(tab.url=="https://www.supremenewyork.com/checkout"){
-             chrome.tabs.executeScript(null,{file:"fill.js"});
-           }else if(tab.title.includes("Supreme:")){
-             //chrome.tabs.query({active:true,windowType:"normal", currentWindow: true},function(d){console.debug(d);});
-             sleep(100);
-             chrome.tabs.executeScript(null,{file:"putcart.js"});
-             sleep(500);
-             chrome.tabs.executeScript(null,{file:"h_checkout.js"});
-           }else if(tab.title == "Supreme"){
-             //open search
-             chrome.tabs.executeScript(null,{file:"search.js"});
-             chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-               reloadtab(request);
-             });
-           };
-         });
-      };
-    });
-  });
-  demo.addEventListener('click', function() {
-    for($i=0;$i<2;$i++){
       chrome.tabs.update({
            url: "https://www.supremenewyork.com/shop/all"
       });
-      sleep(500);
-      chrome.tabs.getSelected(null,function(tab) {
-        chrome.tabs.executeScript(null,{file:"search.js"});
-        chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-
-          if(request == ""){
-            console.log("nothing");
-          }else{
-            alert(request);
-            break;
-          };
-        });
-
+      sleep(100);
+      chrome.tabs.executeScript(null,{file:"search.js"});
+  });
+  chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    sendResponse(JSON.stringify(request));
+    if(request.includes("shop")){
+      reloadtab(request);
+      sleep(100);
+      chrome.tabs.executeScript(null,{file:"putcart.js"});
+      chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if(changeInfo.status == "complete"){
+          chrome.tabs.getSelected(null,function(tab) {
+            chrome.tabs.executeScript(null,{file:"fill.js"});
+          });
+        };
       });
-
+    }else if (request =="notfound") {
+      //alert("nothing");
+      chrome.tabs.update({
+        url: "https://www.supremenewyork.com/shop/all"
+      });
+      sleep(100);
+      chrome.tabs.executeScript(null,{file:"search.js"});
     };
   });
   //auto input img code from data

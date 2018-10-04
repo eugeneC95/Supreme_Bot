@@ -1,5 +1,6 @@
 chrome.storage.sync.get('i_code', function(obj) {
   //document.querySelector('#imgcode').value =obj.i_code;
+  var boo = false;
   var item = obj.i_code;
   console.log("Searching:" + item);
   var forEach = function (array, callback, scope) {
@@ -13,10 +14,18 @@ chrome.storage.sync.get('i_code', function(obj) {
     //console.log(index, value); //show all data that got
     if(value.getAttribute("alt") == item){
       var link = articlelist[index].href;
+      boo = true;
       chrome.runtime.sendMessage(link, function(response) {
-        console.log("url sent");
+        console.log("sent: "+link);
       });
+
     };
   });
   console.log("Search Complete");
+  if(boo == false){
+    var link = "notfound";
+    chrome.runtime.sendMessage(link, function(response) {
+      console.log("sent: "+link);
+    });
+  };
 });
