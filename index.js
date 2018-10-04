@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
   var edit = document.getElementById('edit_btn');
+  var test = document.getElementById('test');
   function reloadtab(i){
     chrome.tabs.update({url:i});
   }
@@ -26,34 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-  // start.addEventListener('click', function() {
-  //   chrome.tabs.update({
-  //        url: "https://www.supremenewyork.com/shop/all"
-  //   });
-  //   chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  //      if(changeInfo.status == "complete"){
-  //        chrome.tabs.getSelected(null,function(tab) {
-  //          if(tab.url=="https://www.supremenewyork.com/checkout"){
-  //            chrome.tabs.executeScript(null,{file:"fill.js"});
-  //          }else if(tab.title.includes("Supreme:")){
-  //            //chrome.tabs.query({active:true,windowType:"normal", currentWindow: true},function(d){console.debug(d);});
-  //            sleep(100);
-  //            chrome.tabs.executeScript(null,{file:"putcart.js"});
-  //            sleep(500);
-  //          }else if(tab.title == "Supreme"){
-  //            //open search
-  //            chrome.tabs.executeScript(null,{file:"search.js"});
-  //            chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  //              reloadtab(request);
-  //            });
-  //          };
-  //        });
-  //     };
-  //   });
-  // });
   start.addEventListener('click', function() {
       chrome.tabs.update({
-           url: "https://www.supremenewyork.com/shop/all/accessories"
+           url: "https://www.supremenewyork.com/shop/all"
       });
       sleep(150);
       chrome.tabs.executeScript(null,{file:"search.js"});
@@ -62,21 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
     sendResponse(JSON.stringify(request));
     if(request.includes("shop")){
       reloadtab(request);
-      sleep(150);
-      chrome.tabs.executeScript(null,{file:"putcart.js"});
       chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if(changeInfo.status == "complete"){
-          chrome.tabs.getSelected(null,function(tab) {
+          if(tab.url.includes('checkout') == true){
             chrome.tabs.executeScript(null,{file:"fill.js"});
-          });
+          }else if(tab.url.includes('all') == false){
+            sleep(200);
+            chrome.tabs.executeScript(null,{file:"putcart.js"});
+          };
         };
       });
     }else if (request =="notfound") {
-      //alert("nothing");
       chrome.tabs.update({
-        url: "https://www.supremenewyork.com/shop/all/accessories"
+        url: "https://www.supremenewyork.com/shop/all"
       });
-      sleep(180);
+      sleep(300);
       chrome.tabs.executeScript(null,{file:"search.js"});
     };
   });

@@ -10,6 +10,7 @@ chrome.storage.sync.get('i_code', function(obj) {
   };
   var articlelist = document.querySelectorAll('div.inner-article>a');
   var imglist = document.querySelectorAll('div.inner-article>a>img');
+  
   forEach(imglist, function (index, value) {
     //console.log(index, value); //show all data that got
     if(value.getAttribute("alt") == item){
