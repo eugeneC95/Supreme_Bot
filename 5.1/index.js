@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var hmpage = document.getElementById('home_btn');
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
+  var edit = document.getElementById('edit_btn');
   function reloadtab(i){
     chrome.tabs.update({url:i});
   }
@@ -93,6 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
   autoinput("#order_month","o_month");
   autoinput("#order_year","o_year");
   autoinput("#order_cvv","o_cvv");
+  edit.addEventListener('click',function(){
+    chrome.tabs.update({
+         url: "https://www.supremenewyork.com/shop/cart"
+    });
+  });
   save.addEventListener('click',function(){
     //text got value and set data to local
     chrome.storage.sync.set({'i_code': document.querySelector('#imgcode').value}, function() {console.log("saved")});

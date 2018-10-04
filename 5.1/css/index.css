@@ -11,7 +11,7 @@ body{
 #imgbox{
   margin-top: 10px;
 }
-#start_btn,#refresh_btn,#save_btn,#home_btn{
+#start_btn,#refresh_btn,#save_btn,#home_btn,#edit_btn{
   margin-top: 5px;
   font-size: 15px;
   background-color: red;
