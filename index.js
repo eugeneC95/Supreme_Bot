@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
       reloadtab(request);
       sleep(100);
       chrome.tabs.executeScript(null,{file:"putcart.js"});
+      
       chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if(changeInfo.status == "complete"){
           chrome.tabs.getSelected(null,function(tab) {

@@ -12,9 +12,9 @@ function putcart(){
 }
 function headcheck(){
   document.querySelector("[class='button checkout']").click();
-  sleep(200);
+
 }
 putcart();
-sleep(100);
+sleep(300);
 headcheck();
 console.log("done_heading");
