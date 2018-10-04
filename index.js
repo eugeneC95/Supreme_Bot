@@ -4,12 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
   var edit = document.getElementById('edit_btn');
-  var test = document.getElementById('test');
   function reloadtab(i){
     chrome.tabs.update({url:i});
-  }
-  function newtab(i){
-    chrome.tabs.create({url:i});
   }
   function autoinput(id,data){
     if(document.querySelector(id).value == ""){
