@@ -15,3 +15,4 @@
   <p>plan to Created with pure python code.maybe some new module.ex: Beautiful Soup...</p>
 <h4>5.1</h4>
   <p>Using chrome extension and js to create a extension to bypass google captcha...</p>
+  <small>It Actually Works now.Feel free to try it. :)</small>
