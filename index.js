@@ -53,18 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // });
   start.addEventListener('click', function() {
       chrome.tabs.update({
-           url: "https://www.supremenewyork.com/shop/all"
+           url: "https://www.supremenewyork.com/shop/all/accessories"
       });
-      sleep(100);
+      sleep(150);
       chrome.tabs.executeScript(null,{file:"search.js"});
   });
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     sendResponse(JSON.stringify(request));
     if(request.includes("shop")){
       reloadtab(request);
-      sleep(100);
+      sleep(150);
       chrome.tabs.executeScript(null,{file:"putcart.js"});
-      
       chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if(changeInfo.status == "complete"){
           chrome.tabs.getSelected(null,function(tab) {
@@ -75,14 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }else if (request =="notfound") {
       //alert("nothing");
       chrome.tabs.update({
-        url: "https://www.supremenewyork.com/shop/all"
+        url: "https://www.supremenewyork.com/shop/all/accessories"
       });
-      sleep(100);
+      sleep(180);
       chrome.tabs.executeScript(null,{file:"search.js"});
     };
   });
   //auto input img code from data
-
+  autoinput("#delays","delay");
   autoinput("#imgcode","i_code");
   autoinput("#order_name","o_name");
   autoinput("#order_email","o_email");
@@ -102,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   save.addEventListener('click',function(){
     //text got value and set data to local
+    chrome.storage.sync.set({'delay': document.querySelector('#delays').value}, function() {console.log("saved")});
     chrome.storage.sync.set({'i_code': document.querySelector('#imgcode').value}, function() {console.log("saved")});
     chrome.storage.sync.set({'o_name': document.querySelector('#order_name').value}, function() {console.log("saved")});
     chrome.storage.sync.set({'o_email': document.querySelector('#order_email').value}, function() {console.log("saved")});
@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.set({'o_month': document.querySelector('#order_month').value}, function() {console.log("saved")});
     chrome.storage.sync.set({'o_year': document.querySelector('#order_year').value}, function() {console.log("saved")});
     chrome.storage.sync.set({'o_cvv': document.querySelector('#order_cvv').value}, function() {console.log("saved")});
-
   });
   refresh.addEventListener('click',function(){
     chrome.storage.sync.get('i_code', function(obj) {

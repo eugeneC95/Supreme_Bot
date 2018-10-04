@@ -12,9 +12,13 @@ function putcart(){
 }
 function headcheck(){
   document.querySelector("[class='button checkout']").click();
-
 }
+
 putcart();
-sleep(300);
-headcheck();
+chrome.storage.sync.get('delay', function(obj) {
+  var delay = obj['delay'];
+  sleep(delay);
+  headcheck();
+});
+
 console.log("done_heading");
