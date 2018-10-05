@@ -1,7 +1,7 @@
-chrome.storage.sync.get('i_code', function(obj) {
+chrome.storage.sync.get((codes), function(obj) {
   //document.querySelector('#imgcode').value =obj.i_code;
   var boo = false;
-  var item = obj.i_code;
+  var item = obj[codes];
   console.log("Searching:" + item);
   var forEach = function (array, callback, scope) {
     for (var i = 0; i < array.length; i++) {
@@ -10,7 +10,7 @@ chrome.storage.sync.get('i_code', function(obj) {
   };
   var articlelist = document.querySelectorAll('div.inner-article>a');
   var imglist = document.querySelectorAll('div.inner-article>a>img');
-  
+
   forEach(imglist, function (index, value) {
     //console.log(index, value); //show all data that got
     if(value.getAttribute("alt") == item){

@@ -3,48 +3,94 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <script src="index.js"></script>
   </head>
   <body>
-    <div id="container">
-      <div><label id="title">SupremeBot</label></div>
-      <button id="home_btn">Home</button>
-      <button id="edit_btn">EditCheckout</button><br>
-      <button id="start_btn">Start</button>
-      <input type="number" value="" id="delays" placeholder="200">
-      <div id=imgbox>
-        <label>Image Code</label>
-        <input type="text" id="imgcode">
+    <div class="container">
+      <h5>SupremeBot</h5>
+      <div class="row mb-2">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <div class="col-4"><button class="btn btn-outline-danger btn-sm" id="home_btn">Home</button></div>
+          <div class="col-8"><button class="btn btn-outline-danger btn-sm" id="start_btn">Start</button></div>
+        </div>
       </div>
-      <form id="form">
-        <label>Name</label>
-        <input type="text" value="" id="order_name" placeholder="Your Name">
-        <label>Email</label>
-        <input type="text" value="" id="order_email" placeholder="Email">
-        <label>Tel</label>
-        <input type="text" value="" id="order_tel" placeholder="Tel">
-        <label>Zip</label>
-        <input type="text" value="" id="order_zip" placeholder="Zip">
-        <label>State(Add space at start ex: 東京都)</label>
-        <input type="text" value="" id="order_state" placeholder="State">
-        <label>Address1</label>
-        <input type="text" value="" id="order_add1" placeholder="Address1">
-        <label>Address2</label>
-        <input type="text" value="" id="order_add2" placeholder="Address2">
-        <label>CardNo</label>
-        <input type="text" value="" id="order_card" placeholder="CardNo">
-        <label>ExpireMonth</label>
-        <input type="text" value="" id="order_month" placeholder="ExpireMonth">
-        <label>ExpireYear</label>
-        <input type="text" value="" id="order_year" placeholder="ExpireYear">
-        <label>CVV</label>
-        <input type="text" value="" id="order_cvv" placeholder="CVV No">
-      </form>
-      <button id="save_btn" >Save</button>
-      <button id="refresh_btn">Refresh</button>
-
-
+      <div class="input-group input-group-sm mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Delay</span>
+        </div>
+        <input type="number" id="delays" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">1 <input type="radio" name="selectcode" value="code1" checked></span>
+        </div>
+        <input type="text" id="imgcode1" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">2 <input type="radio" name="selectcode" value="code2"></span>
+        </div>
+        <input type="text" id="imgcode2" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">3 <input type="radio" name="selectcode" value="code3"></span>
+        </div>
+        <input type="text" id="imgcode3" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">4 <input type="radio" name="selectcode" value="code4"></span>
+        </div>
+        <input type="text" id="imgcode4" class="form-control form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="btn-group btn-group-sm mb-2" role="group">
+        <button type="button" id="save_btn" class="btn btn-outline-danger">Save</button>
+        <button type="button" id="refresh_btn" class="btn btn-outline-danger">Refresh</button>
+        <button type="button" id="edit_btn" class="btn btn-outline-danger">EditCheckout</button>
+      </div>
+      <div class="btn-group btn-group-sm mb-1" role="group">
+        <button type="button" id="card1" class="btn btn-success">Card1</button>
+        <button type="button" id="card2" class="btn btn-success">Card2</button>
+      </div>
+      <div class="mb-3">
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_name" placeholder="Your Name">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_email" placeholder="Email">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_tel" placeholder="Tel">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_zip" placeholder="Zip">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_state" placeholder="State">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_add1" placeholder="Address1">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_add2" placeholder="Address2">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_card" placeholder="CardNo">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_month" placeholder="ExpireMonth">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_year" placeholder="ExpireYear">
+        </div>
+        <div class="icon-addon addon-sm">
+          <input type="text" value="" class="form-control" id="order_cvv" placeholder="CVV No">
+        </div>
+      </div>
     </div>
   </body>
 </html>
