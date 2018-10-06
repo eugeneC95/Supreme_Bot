@@ -84,5 +84,5 @@ function buy(){
 console.log("filling");
 fillform();
 console.log("fill done");
-sleep(100);
-//buy();
+sleep(300);
+buy();

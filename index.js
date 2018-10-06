@@ -64,6 +64,15 @@ document.addEventListener('DOMContentLoaded', function() {
         url: "https://www.supremenewyork.com/shop/all"
       });
       sleep(300);
+      if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code1"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code1';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code2"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code2';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code3"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code3';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code4"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code4';"});
+      }
       chrome.tabs.executeScript(null,{file:"search.js"});
     };
   });
