@@ -14,7 +14,7 @@
   <img src="http://206.189.90.203/img/github_imgcode.png" width=600>
   <small>It Actually Works now.Feel free to try it. :)</small>
 <h2>Installation</h2>
-
+  <p>More Tools > Extension > open Developer mode > Load Unpacked > choose unziped folder</p>
 <h2>Result</h2>
 <h4>Week7</h4>
 <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81761993139_3.jpg?1538982734" width="300">
