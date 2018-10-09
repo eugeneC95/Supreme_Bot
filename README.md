@@ -6,7 +6,7 @@
 <h2>Description</h2>
 <h4>1.0</h4>
   <p>Using chrome extension and js to create a extension to bypass google captcha...</p>
-  <img src="" width=400>
+  <img src="http://206.189.90.203/img/github_imgcode.png" width=400>
   <small>It Actually Works now.Feel free to try it. :)</small>
 <h2>Installation</h2>
 
