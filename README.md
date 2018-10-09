@@ -6,7 +6,12 @@
 <h2>Description</h2>
 <h4>1.0</h4>
   <p>Using chrome extension and js to create a extension to bypass google captcha...</p>
-  <img src="http://206.189.90.203/img/github_imgcode.png" width=400>
+<h4>Extension Design</h4>  
+  <img src="http://206.189.90.203/img/github_img.png" width=200>
+<h4>Image Code</h4>
+  <p>The main is to get the image code from the website first.Or the programs won't works.</p>
+  <p>Example:Choosing Image > Right Click > Inspect >find the Alt:"xxxxx" > copy the xxxx</p>
+  <img src="http://206.189.90.203/img/github_imgcode.png" width=600>
   <small>It Actually Works now.Feel free to try it. :)</small>
 <h2>Installation</h2>
 
