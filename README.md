@@ -1,4 +1,4 @@
-<h1>Bot only Works on Japan</h1>
+<h1>Only Works in Japan</h1>
 <h5>All version of Supreme Bot are Created by Eugene_Chan. </h5>
 <h5>All code are for education uses only.</h5>
 <h5>Do not using the code without owner permit.</h5>
