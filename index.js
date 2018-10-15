@@ -46,17 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
       reloadtab(request);
       chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if(changeInfo.status == "complete"){
-          if(tab.url.includes('checkout') == true){
-            if(coption == true){
-              chrome.tabs.executeScript(null,{code:"option = 'card1';"});
-            }else if(coption == false){
-              chrome.tabs.executeScript(null,{code:"option = 'card2';"});
-            };
-            chrome.tabs.executeScript(null,{file:"fill.js"});
-          }else if(tab.url.includes('all') == false){
+          if(tab.url.includes('all') == false){
             sleep(200);
             chrome.tabs.executeScript(null,{file:"putcart.js"});
           };
+        };
+        if(tab.url.includes('checkout') == true){
+          if(coption == true){
+            chrome.tabs.executeScript(null,{code:"option = 'card1';"});
+          }else if(coption == false){
+            chrome.tabs.executeScript(null,{code:"option = 'card2';"});
+          };
+          chrome.tabs.executeScript(null,{file:"fill.js"});
         };
       });
     }else if (request =="notfound") {
