@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var hmpage = document.getElementById('home_btn');
   var save = document.getElementById('save_btn');
   var refresh = document.getElementById('refresh_btn');
-  var edit = document.getElementById('edit_btn');
+  var del = document.getElementById('del_btn');
   var card1 = document.getElementById('card1');
   var card2 = document.getElementById('card2');
   var coption = true;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     sendResponse(JSON.stringify(request));
-    if(request.includes("shop")){
+    if(request != "notfound"){
       reloadtab(request);
       chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if(changeInfo.status == "complete"){
@@ -59,24 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
           chrome.tabs.executeScript(null,{file:"fill.js"});
         };
       });
-
-
-
     }else if (request =="notfound") {
       chrome.tabs.update({
         url: "https://www.supremenewyork.com/shop/all"
       });
-      sleep(300);
-      if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code1"){
-        chrome.tabs.executeScript(null,{code:"codes = 'i_code1';"});
-      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code2"){
-        chrome.tabs.executeScript(null,{code:"codes = 'i_code2';"});
-      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code3"){
-        chrome.tabs.executeScript(null,{code:"codes = 'i_code3';"});
-      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code4"){
-        chrome.tabs.executeScript(null,{code:"codes = 'i_code4';"});
-      }
-      chrome.tabs.executeScript(null,{file:"search.js"});
+      chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if(changeInfo.status == "complete"){
+          if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code1"){
+            chrome.tabs.executeScript(null,{code:"codes = 'i_code1';"});
+          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code2"){
+            chrome.tabs.executeScript(null,{code:"codes = 'i_code2';"});
+          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code3"){
+            chrome.tabs.executeScript(null,{code:"codes = 'i_code3';"});
+          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code4"){
+            chrome.tabs.executeScript(null,{code:"codes = 'i_code4';"});
+          }
+          chrome.tabs.executeScript(null,{file:"search.js"});
+        };
+      });
     };
   });
   //auto input img code from data
@@ -97,9 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
   autoinput("#order_year","o_year");
   autoinput("#order_cvv","o_cvv");
   coption = true;
-  edit.addEventListener('click',function(){
+  del.addEventListener('click',function(){
     chrome.tabs.update({
          url: "https://www.supremenewyork.com/shop/cart"
+    });
+    //alert(document.querySelector("button[type='submit']"));
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+      if(changeInfo.status == "complete"){
+        if(tab.url.includes('shop/cart') == true){
+          chrome.tabs.executeScript(null,{file:"removecart.js"});
+        };
+      };
     });
   });
   save.addEventListener('click',function(){

@@ -18,7 +18,7 @@ putcart();
 chrome.storage.sync.get('delay', function(obj) {
   var delay = obj['delay'];
   sleep(delay);
-  headcheck();
+  document.querySelector("[class='button checkout']").click();
 });
 
 console.log("done_heading");
