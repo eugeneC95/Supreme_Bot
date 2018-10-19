@@ -63,20 +63,18 @@ document.addEventListener('DOMContentLoaded', function() {
       chrome.tabs.update({
         url: "https://www.supremenewyork.com/shop/all"
       });
-      chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-        if(changeInfo.status == "complete"){
-          if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code1"){
-            chrome.tabs.executeScript(null,{code:"codes = 'i_code1';"});
-          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code2"){
-            chrome.tabs.executeScript(null,{code:"codes = 'i_code2';"});
-          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code3"){
-            chrome.tabs.executeScript(null,{code:"codes = 'i_code3';"});
-          }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code4"){
-            chrome.tabs.executeScript(null,{code:"codes = 'i_code4';"});
-          }
-          chrome.tabs.executeScript(null,{file:"search.js"});
-        };
-      });
+      request ="";
+      sleep(300);
+      if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code1"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code1';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code2"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code2';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code3"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code3';"});
+      }else if(document.querySelector('input[type="radio"][name="selectcode"]:checked').value == "code4"){
+        chrome.tabs.executeScript(null,{code:"codes = 'i_code4';"});
+      };
+      chrome.tabs.executeScript(null,{file:"search.js"});
     };
   });
   //auto input img code from data

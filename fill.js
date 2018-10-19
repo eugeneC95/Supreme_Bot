@@ -76,13 +76,15 @@ function fillform(){
       document.querySelector('[id="vval"]').value = obj['o_cvv2'];
     });
   };
-  document.querySelector('[id="order_terms"]').click();
+
 }
 function buy(){
+  document.querySelector('[id="order_terms"]').click();
+  sleep(100);
   document.querySelector('input[type="submit"][value="購入する"]').click();
 }
 console.log("filling");
 fillform();
 console.log("fill done");
-sleep(300);
+sleep(250);
 buy();
